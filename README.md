@@ -89,7 +89,6 @@ Switches Beam
 ┌────────────────────────┐
 │   Headlight / Torch    │
 └────────────────────────┘
-
 ```
 
 The system transitions through operational data stages as detailed in the source project configurations:
