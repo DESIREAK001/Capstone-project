@@ -1,4 +1,3 @@
-```markdown
 # SmartBeam: An Embedded Program for Automatic Headlight Intensity Adjustment
 
 SmartBeam is an affordable automotive retrofit solution designed to automatically modulate vehicle headlight intensity in real time. By dynamically switching between high beam, low beam, and intermediate states based on oncoming traffic and ambient lighting, the system mitigates the dangerous effects of headlight glare, reduces glare-induced driver fatigue, and enhances night-time road safety in resource-constrained environments.
@@ -29,21 +28,18 @@ SmartBeam is an affordable automotive retrofit solution designed to automaticall
 
 ## 🎯 System Objectives
 
-* [cite_start]**Investigate Limitations:** Evaluate the gaps and strengths of baseline automatic lights, adaptive headlights, high-beam assist, and matrix illumination systems[cite: 108].
+* **Investigate Limitations:** Evaluate the gaps and strengths of baseline automatic lights, adaptive headlights, high-beam assist, and matrix illumination systems[cite: 108].
 * [cite_start]**Design an Embedded Program:** Develop logical, low-latency code mapping physical light data to deterministic hardware states using advanced sensor technology[cite: 109].
 * [cite_start]**Implement Prototype:** Assemble a bench-top, closed-loop functional prototype capable of simulating automotive beam transformations safely[cite: 110, 644].
-* [cite_start]**Validate Performance:** Test response times, environmental resilience, and loop stability within a controlled laboratory environment[cite: 111, 590].
+* **Validate Performance:** Test response times, environmental resilience, and loop stability within a controlled laboratory environment[cite: 111, 590].
 
 ---
 
 ## 🏗️ System Architecture & Logical Design
 
-[cite_start]The system relies on a **closed-loop feedback control architecture** designed to actively intercept and correct real-time hardware desynchronization[cite: 644].
+The system relies on a **closed-loop feedback control architecture** designed to actively intercept and correct real-time hardware desynchronization[cite: 644].
 
 ### Data Flow Diagram (DFD) Level 0 Overview
-
-```
-
 ```
                       ┌────────────────────────┐
                       │  Ambient Environment   │
