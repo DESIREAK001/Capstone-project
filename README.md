@@ -52,45 +52,6 @@ The system relies on a **closed-loop feedback control architecture** designed to
 
 ```
 
-┌─────────────────────────────────────────────────────────────────────┐
-│ SYSTEM BOUNDARY (Arduino Uno)                                       │
-│                                                                     │
-│   ┌──────────────┐          ┌──────────────┐         ┌──────────┐   │
-│   │ Process 1.0  │          │ Process 3.0  │         │ Data     │   │
-│   │ Read Ambient ├─────────►│  System Loop ├────────►│ Store D4 │   │
-│   │ Light Level  │          │ (Controller) │         │ Current  │   │
-│   └──────────────┘          └──────┬───────┘         │ State    │   │
-│                                    │                 └────┬─────┘   │
-│   ┌──────────────┐                 │                      │         │
-│   │ Process 2.0  │                 ▼                      │         │
-│   │ Read Headlamp├─────────►┌──────────────┐              │         │
-│   │ Feedback LDR │          │ Process 4/5  │              │         │
-│   └──────────────┘          │ State Match  │◄─────────────┘         │
-│                             │  & Update    │                        │
-│                             └──────┬───────┘                        │
-│                                    │                                │
-│                                    ▼ (If State Mismatch)            │
-│                             ┌──────────────┐                        │
-│                             │ Process 6.0  │                        │
-│                             │ Trigger Relay│                        │
-│                             └──────┬───────┘                        │
-└────────────────────────────────────┼────────────────────────────────┘
-│
-150ms Pulse Signal
-│
-▼
-┌────────────────────────┐
-│      Relay Module      │
-└───────────┬────────────┘
-│
-Switches Beam
-│
-▼
-┌────────────────────────┐
-│   Headlight / Torch    │
-└────────────────────────┘
-```
-
 The system transitions through operational data stages as detailed in the source project configurations:
 * [cite_start]**Sensing Transformation:** Process 1.0 measures ambient lux via a front-facing sensor array, while Process 2.0 reads continuous luminosity directly from an isolated sub-section of the vehicle's headlight lens, digitizing both parameters into 10-bit values (0 to 1023)[cite: 441, 442, 443, 444].
 * [cite_start]**Serialization & Buffer:** Readings are cached in temporary registers (Data Store D1 for Ambient, Data Store D2 for Feedback) to decouple hardware speeds from software execution[cite: 445, 446].
